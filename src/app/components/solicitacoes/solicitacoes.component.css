@@ -1,0 +1,90 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+main{
+  width: 100%;
+  height: 95%;
+  background-color: #F2F2F2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+h2{
+  margin: auto;
+  font-family: 'Inter';
+  font-weight: 700;
+  font-size: 30px;
+}
+#solicitacoes{
+  width: 900px;
+  min-height: 65em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#retornar{
+  width: 180px;
+  height: 50px;
+  font-family: 'Inter';
+  font-weight: 700;
+  font-size: 15px;
+  background: #FFFFFF;
+  border: 1px solid #11DD62;
+  border-radius: 5px;
+  position: absolute; top: 180px; left: 60px;
+  display: flex;
+  align-items: center;
+  gap: 15%;
+}
+#seta{
+  margin-left: 15%;
+}
+.soliCards{
+  margin: 1%;
+  width: 880px;
+  height: 110px;
+  background: #FFFFFF;
+  border: 1px solid #11DD62;
+  display: flex;
+}
+.foto{
+  width: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.interesses{
+  width: 440px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.interesses div{
+  margin: 2% 0 2% 0;
+}
+.nomeInt{
+  font-family: 'Inter';
+  font-weight: 700;
+  font-size: 15px;
+  margin-right: 2%;
+}
+.botoes{
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+}
+.botaoAceitar{
+  margin-bottom: 8%;
+  width: 140px;
+  height: 30px;
+  font-family: 'Inter';
+  font-weight: 700;
+  font-size: 14px;
+  background: #11DD62;
+  border: 1px solid #11DD62;
+  border-radius: 5px;
+  color: white;
+}

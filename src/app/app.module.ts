@@ -10,6 +10,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { InicioTutorComponent } from './components/inicio-tutor/inicio-tutor.component';
 import { CadastroAlunoComponent } from './components/cadastro-aluno/cadastro-aluno.component';
 import { CadastroTutorComponent } from './components/cadastro-tutor/cadastro-tutor.component';
+import { SolicitacoesComponent } from './components/solicitacoes/solicitacoes.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { CadastroTutorComponent } from './components/cadastro-tutor/cadastro-tut
     HeaderComponent,
     InicioTutorComponent,
     CadastroAlunoComponent,
-    CadastroTutorComponent
+    CadastroTutorComponent,
+    SolicitacoesComponent
   ],
   imports: [
     BrowserModule,
