@@ -1,0 +1,87 @@
+<app-header></app-header>
+<main>
+  <div id="alunoTutor">
+    <button routerLink="../cadastro-aluno" id="botaoAluno">Estudante</button>
+    <button id="botaoTutor">Tutor</button>
+  </div>
+  <form id="secPrincipal">
+    <section id="subSec1">
+      <mat-card class="card1">
+        <mat-card-title><h2>Login</h2></mat-card-title>
+        <div class="divInput">
+          <label>Email</label>
+          <input type="text">
+        </div>
+        <div class="divInput">
+          <label>Senha</label>
+          <input type="text">
+        </div>
+      </mat-card>
+      <mat-card class="card2">
+        <mat-card-title><h2>Qualificações</h2></mat-card-title>
+        <mat-card-subtitle>
+          <span class="subtitulo">Selecione que linguagens deseja ensinar</span>
+        </mat-card-subtitle>
+        <section class="sectionSelect">
+          <div class="sectionOptions">
+            <select class="intSelect">
+              <option>Java</option>
+              <option>Kotlin</option>
+              <option>C#</option>
+            </select>
+            <button id="botaoSelecionar">Selecionar</button>
+          </div>
+          <div class="sectionCards">
+            <div class="interesseCard">
+              <span>Java</span>
+              <img src="../../assets/Imagens/X.svg">
+            </div>
+            <div class="interesseCard">
+              <span>Kotlin</span>
+              <img src="../../assets/Imagens/X.svg">
+            </div>
+            <div class="interesseCard">
+              <span>C#</span>
+              <img src="../../assets/Imagens/X.svg">
+            </div>
+          </div>
+        </section>
+      </mat-card>
+    </section>
+    <section id="subSec2">
+      <mat-card class="card3">
+        <mat-card-title><h2>Perfil</h2></mat-card-title>
+        <section id="subSubSec1">
+          <div id="nomeCPF">
+            <div class="divInput">
+              <label>Nome</label>
+              <input type="text">
+            </div>
+            <div class="divInput">
+              <label>CPF</label>
+              <input type="text">
+            </div>
+          </div>
+          <div id="fotoNasc">
+            <div id="divImg">
+              <img src="../../assets/Imagens/Foto.svg">
+            </div>
+            <div class="divInput">
+              <label>Data de Nascimento</label>
+              <input id="inputData" type="text">
+            </div>
+          </div>
+        </section>
+        <section id="subSubSec2">
+          <div class="divInput">
+            <label>Descrição</label>
+            <textarea></textarea>
+          </div>
+        </section>
+      </mat-card>
+      <button routerLink="../inicio-tutor" id="botaoCadastrar">
+        FINALIZAR CADASTROS
+      </button>
+    </section>
+  </form>
+</main>

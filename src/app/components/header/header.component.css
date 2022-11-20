@@ -1,0 +1,23 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+header{
+  height: 54px;
+  background: #11DD62;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+h2{
+  height: 30px;
+  font-family: 'Inter';
+  font-weight: bold;
+  font-size: 25px;
+  margin: 0 0 0 60px;
+}
+div{
+  height: 30px;
+  width: 60px;
+}
