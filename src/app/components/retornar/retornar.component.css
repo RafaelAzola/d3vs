@@ -1,0 +1,17 @@
+#retornar{
+  width: 180px;
+  height: 50px;
+  font-family: 'Inter';
+  font-weight: 700;
+  font-size: 15px;
+  background: #FFFFFF;
+  border: 1px solid #11DD62;
+  border-radius: 5px;
+  position: absolute; top: 180px; left: 60px;
+  display: flex;
+  align-items: center;
+  gap: 15%;
+}
+#seta{
+  margin-left: 15%;
+}

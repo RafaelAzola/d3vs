@@ -11,40 +11,46 @@ main{
   align-items: center;
 }
 h2{
-  margin: auto;
+  margin: 2.5em;
   font-family: 'Inter';
   font-weight: 700;
-  font-size: 30px;
+  font-size: 20px;
 }
-#solicitacoes{
-  width: 900px;
-  min-height: 65em;
+#centro{
+  width: 800px;
+  min-height: 52em;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-.soliCards{
-  margin: 1%;
-  width: 880px;
-  height: 110px;
   background: #FFFFFF;
   border: 1px solid #11DD62;
+  border-radius: 10px;
+  padding-top: 2%;
+  padding-bottom: 4%;
+}
+.histCard{
+  margin-top: 2%;
+  width: 720px;
+  height: 120px;
+  background: #FFFFFF;
+  border: 1px solid #11DD62;
+  border-radius: 15px;
   display: flex;
 }
 .foto{
-  width: 220px;
+  width: 180px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.interesses{
-  width: 440px;
+.nome{
+  width: 180px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-.interesses div{
-  margin: 2% 0;
+.nome div{
+  margin: 4% 0;
 }
 .nomeInt{
   font-family: 'Inter';
@@ -52,22 +58,31 @@ h2{
   font-size: 15px;
   margin-right: 2%;
 }
+.desc{
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+.desc div{
+  height: 53px;
+}
 .botoes{
-  width: 220px;
+  width: 180px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: end;
 }
-.botaoAceitar{
-  margin-bottom: 8%;
+.botaoAssistir{
+  margin-bottom: 10%;
   width: 140px;
   height: 30px;
   font-family: 'Inter';
   font-weight: 700;
   font-size: 14px;
-  background: #11DD62;
-  border: 1px solid #11DD62;
+  background: #847AF9;;
+  border: 1px solid #847AF9;;
   border-radius: 5px;
   color: white;
 }

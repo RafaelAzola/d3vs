@@ -11,6 +11,11 @@ import { InicioTutorComponent } from './components/inicio-tutor/inicio-tutor.com
 import { CadastroAlunoComponent } from './components/cadastro-aluno/cadastro-aluno.component';
 import { CadastroTutorComponent } from './components/cadastro-tutor/cadastro-tutor.component';
 import { SolicitacoesComponent } from './components/solicitacoes/solicitacoes.component';
+import { InicioAlunoComponent } from './components/inicio-aluno/inicio-aluno.component';
+import { RetornarComponent } from './components/retornar/retornar.component';
+import { MenuFiltroComponent } from './components/menu-filtro/menu-filtro.component';
+import { HistoricoTutorComponent } from './components/historico-tutor/historico-tutor.component';
+import { HistoricoAlunoComponent } from './components/historico-aluno/historico-aluno.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +25,12 @@ import { SolicitacoesComponent } from './components/solicitacoes/solicitacoes.co
     InicioTutorComponent,
     CadastroAlunoComponent,
     CadastroTutorComponent,
-    SolicitacoesComponent
+    SolicitacoesComponent,
+    InicioAlunoComponent,
+    RetornarComponent,
+    MenuFiltroComponent,
+    HistoricoTutorComponent,
+    HistoricoAlunoComponent
   ],
   imports: [
     BrowserModule,
