@@ -16,6 +16,8 @@ import { RetornarComponent } from './components/retornar/retornar.component';
 import { MenuFiltroComponent } from './components/menu-filtro/menu-filtro.component';
 import { HistoricoTutorComponent } from './components/historico-tutor/historico-tutor.component';
 import { HistoricoAlunoComponent } from './components/historico-aluno/historico-aluno.component';
+import { SelecaoComponent } from './components/selecao/selecao.component';
+import { PerfilTutorComponent } from './components/perfil-tutor/perfil-tutor.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { HistoricoAlunoComponent } from './components/historico-aluno/historico-
     RetornarComponent,
     MenuFiltroComponent,
     HistoricoTutorComponent,
-    HistoricoAlunoComponent
+    HistoricoAlunoComponent,
+    SelecaoComponent,
+    PerfilTutorComponent,
   ],
   imports: [
     BrowserModule,

@@ -38,13 +38,22 @@ h2{
   align-items: center;
 }
 .interesses{
-  width: 440px;
+  width: 220px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 .interesses div{
   margin: 2% 0;
+}
+.data{
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+.data div{
+  height: 50px;
 }
 .nomeInt{
   font-family: 'Inter';
