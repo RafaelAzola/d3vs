@@ -1,0 +1,48 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "discriminacao": 1,
+      "email": "oi@oi",
+      "senha": "123",
+      "nome": "José",
+      "cpf": 12345678912,
+      "nascimento": "11/11/11",
+      "descricao": "bem vindos ao meu koo"
+    },
+    {
+      "id": 2,
+      "discriminacao": 1,
+      "email": "1312",
+      "senha": "123123",
+      "nome": "3123",
+      "cpf": "1312",
+      "nascimento": "2131",
+      "descricao": "12313"
+    },
+    {
+      "id": 3,
+      "discriminacao": 2,
+      "email": "dads",
+      "senha": "asdasd",
+      "nome": "dasd",
+      "cpf": "adsa",
+      "nascimento": "asd",
+      "descricao": "adsa"
+    }
+  ],
+  "interquali": [
+    {
+      "id": 1,
+      "nome": "Java"
+    },
+    {
+      "id": 2,
+      "nome": "Kotlin"
+    },
+    {
+      "id": 3,
+      "nome": "C#"
+    }
+  ]
+}

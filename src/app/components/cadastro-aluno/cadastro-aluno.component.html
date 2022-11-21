@@ -4,17 +4,17 @@
     <button id="botaoAluno">Estudante</button>
     <button routerLink="../cadastro-tutor" id="botaoTutor">Tutor</button>
   </div>
-  <form id="secPrincipal">
+  <form [formGroup]="form" (submit)="cadastrarUsuario()" id="secPrincipal">
     <section id="subSec1">
       <mat-card class="card1">
         <mat-card-title><h2>Login</h2></mat-card-title>
         <div class="divInput">
-          <label>Email</label>
-          <input type="text">
+          <label for="email">Email</label>
+          <input formControlName="email" type="text" name="email" id="email">
         </div>
         <div class="divInput">
-          <label>Senha</label>
-          <input type="text">
+          <label for="senha">Senha</label>
+          <input formControlName="senha" type="text" name="senha" id="senha">
         </div>
       </mat-card>
       <mat-card class="card2">
@@ -54,12 +54,12 @@
         <section id="subSubSec1">
           <div id="nomeCPF">
             <div class="divInput">
-              <label>Nome</label>
-              <input type="text">
+              <label for="nome">Nome</label>
+              <input formControlName="nome" type="text" name="nome" id="nome">
             </div>
             <div class="divInput">
-              <label>CPF</label>
-              <input type="text">
+              <label for="cpf">CPF</label>
+              <input formControlName="cpf" type="text" name="cpf" id="cpf">
             </div>
           </div>
           <div id="fotoNasc">
@@ -67,19 +67,20 @@
               <img src="../../assets/Imagens/Foto.svg">
             </div>
             <div class="divInput">
-              <label>Data de Nascimento</label>
-              <input id="inputData" type="text">
+              <label for="nascimento">Data de Nascimento</label>
+              <input formControlName="nascimento" type="text" name="nascimento" id="inputData">
             </div>
           </div>
         </section>
         <section id="subSubSec2">
           <div class="divInput">
-            <label>Descrição</label>
-            <textarea></textarea>
+            <label for="descricao">Descrição</label>
+            <textarea formControlName="descricao" name="descricao" id="descricao">
+            </textarea>
           </div>
         </section>
       </mat-card>
-      <button routerLink="../inicio-aluno" id="botaoCadastrar">
+      <button type="submit" id="botaoCadastrar">
         FINALIZAR CADASTROS
       </button>
     </section>
