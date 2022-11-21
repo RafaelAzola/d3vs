@@ -3,10 +3,11 @@ export interface User{
   discriminacao: number;
   email: string;
   senha: string;
-  // interquali: string;
+  interquali?: string [];
   nome: string;
-  cpf: number;
-  // foto: string;
+  cpf: string;
+  foto?: string;
   nascimento: string;
   descricao: string;
+  googleauth?: string;
 }

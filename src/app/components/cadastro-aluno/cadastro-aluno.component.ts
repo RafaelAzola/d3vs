@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { User } from 'src/app/models/user.model';
 import { UserServiceService } from 'src/app/services/user-service/user-service.service';
+import { Interquali } from 'src/app/models/interquali.model';
+import { interqualiServiceService } from 'src/app/services/interquali-service/interquali-service.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -13,10 +15,12 @@ export class CadastroAlunoComponent implements OnInit {
 
   form!: FormGroup;
   user!: User[];
+  interquali!: Interquali[];
 
   constructor(
     private formBuilder: FormBuilder,
     private criarUsuario: UserServiceService,
+    private criarInterquali: interqualiServiceService,
     private router: Router,
   ){}
 
@@ -34,6 +38,12 @@ export class CadastroAlunoComponent implements OnInit {
     this.criarUsuario.lerUser().subscribe({
       next:(usuario: User[]) => {
         this.user = usuario
+      }
+    })
+
+    this.criarInterquali.lerInterquali().subscribe({
+      next:(usuario: Interquali[]) => {
+        this.interquali = usuario
       }
     })
 

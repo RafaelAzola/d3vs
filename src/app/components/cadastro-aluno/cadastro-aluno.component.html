@@ -25,23 +25,15 @@
         <section class="sectionSelect">
           <div class="sectionOptions">
             <select class="intSelect">
-              <option>Java</option>
-              <option>Kotlin</option>
-              <option>C#</option>
+              <option *ngFor="let i of interquali" value="{{i.nome}}">
+                {{i.nome}}
+              </option>
             </select>
             <button id="botaoSelecionar">Selecionar</button>
           </div>
           <div class="sectionCards">
             <div class="interesseCard">
               <span>Java</span>
-              <img src="../../assets/Imagens/X.svg">
-            </div>
-            <div class="interesseCard">
-              <span>Kotlin</span>
-              <img src="../../assets/Imagens/X.svg">
-            </div>
-            <div class="interesseCard">
-              <span>C#</span>
               <img src="../../assets/Imagens/X.svg">
             </div>
           </div>

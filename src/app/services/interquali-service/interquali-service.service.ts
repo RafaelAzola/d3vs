@@ -6,7 +6,7 @@ import { Interquali } from 'src/app/models/interquali.model';
 @Injectable({
   providedIn: 'root'
 })
-export class UserServiceService {
+export class interqualiServiceService {
 
   private url = 'http://localhost:3000/interquali';
   constructor(private httpClient: HttpClient){}
