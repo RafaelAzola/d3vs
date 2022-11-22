@@ -14,7 +14,7 @@ import { Router } from '@angular/router';
 export class CadastroAlunoComponent implements OnInit {
 
   form!: FormGroup;
-  user!: User[];
+  // user!: User[];
   interquali!: Interquali[];
 
   constructor(
@@ -35,23 +35,26 @@ export class CadastroAlunoComponent implements OnInit {
       descricao: new FormControl('')
     })
 
-    this.criarUsuario.lerUser().subscribe({
-      next:(usuario: User[]) => {
-        this.user = usuario
-      }
-    })
+    // this.criarUsuario.lerUser().subscribe({
+    //   next:(usuario: User[]) => {
+    //     try {
+    //       this.user = usuario
+    //     } catch (ex) {
+    //       console.log(ex);
+    //     }
+    //   }
+    // })
 
     this.criarInterquali.lerInterquali().subscribe({
       next:(usuario: Interquali[]) => {
         this.interquali = usuario
       }
     })
-
   }
 
   cadastrarUsuario(){
 
-    const id = (this.user[(this.user.length)-1].id) +1;
+    // const id = (this.user[(this.user.length)-1].id) +1;
     const email = this.form.controls["email"].value;
     const senha = this.form.controls["senha"].value;
     const nome = this.form.controls["nome"].value;
@@ -59,7 +62,7 @@ export class CadastroAlunoComponent implements OnInit {
     const nascimento = this.form.controls["nascimento"].value;
     const descricao = this.form.controls["descricao"].value;
 
-    const usuario: User = {id: id, discriminacao: 1, email: email, senha: senha, nome: nome, cpf: cpf, nascimento: nascimento, descricao: descricao}
+    const usuario: User = {discriminacao: "aluno", email: email, senha: senha, nome: nome, cpf: cpf, nascimento: nascimento, descricao: descricao}
 
     this.criarUsuario.salvarUser(usuario).subscribe({
       next: () => {
