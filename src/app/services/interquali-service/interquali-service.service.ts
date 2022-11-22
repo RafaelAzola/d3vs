@@ -8,11 +8,11 @@ import { Interquali } from 'src/app/models/interquali.model';
 })
 export class interqualiServiceService {
 
-  private url = 'http://localhost:3000/interquali';
+  private url = 'https://localhost:7118/API/InterQuali';
   constructor(private httpClient: HttpClient){}
 
   lerInterquali(): Observable<Interquali[]>{
-    return this.httpClient.get<Interquali[]>(this.url);
+    return this.httpClient.get<Interquali[]>(this.url + "/GetAll");
   }
 
   salvarInterquali(interquali: Interquali): Observable<Interquali>{

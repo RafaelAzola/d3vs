@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class CadastroTutorComponent implements OnInit {
 
   form!: FormGroup;
-  user!: User[];
+  // user!: User[];
 
   constructor(
     private formBuilder: FormBuilder,
@@ -31,17 +31,17 @@ export class CadastroTutorComponent implements OnInit {
       descricao: new FormControl('')
     })
 
-    this.criarUsuario.lerUser().subscribe({
-      next:(usuario: User[]) => {
-        this.user = usuario
-      }
-    })
+    // this.criarUsuario.lerUser().subscribe({
+    //   next:(usuario: User[]) => {
+    //     this.user = usuario
+    //   }
+    // })
 
   }
 
   cadastrarUsuario(){
 
-    const id = (this.user[(this.user.length)-1].id) +1;
+    // const id = (this.user[(this.user.length)-1].id) +1;
     const email = this.form.controls["email"].value;
     const senha = this.form.controls["senha"].value;
     const nome = this.form.controls["nome"].value;
@@ -49,7 +49,7 @@ export class CadastroTutorComponent implements OnInit {
     const nascimento = this.form.controls["nascimento"].value;
     const descricao = this.form.controls["descricao"].value;
 
-    const usuario: User = {id: id, discriminacao: "prof", email: email, senha: senha, nome: nome, cpf: cpf, nascimento: nascimento, descricao: descricao}
+    const usuario: User = {discriminacao: "prof", email: email, senha: senha, nome: nome, cpf: cpf, nascimento: nascimento, descricao: descricao}
 
     this.criarUsuario.salvarUser(usuario).subscribe({
       next: () => {

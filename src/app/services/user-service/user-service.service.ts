@@ -8,7 +8,8 @@ import { User } from 'src/app/models/user.model';
 })
 export class UserServiceService {
 
-  private url = 'https://d3vzapi.azurewebsites.net/API/User';
+  // private url = 'https://d3vzapi.azurewebsites.net/API/User';
+  private url = 'https://localhost:7118/API/User';
   constructor(private httpClient: HttpClient){}
 
   httpOptions = {
@@ -29,11 +30,11 @@ export class UserServiceService {
     return this.httpClient.post<User>(this.url, usuario, this.httpOptions);
   }
 
-  // updateUser(usuario: User, id: any): Observable<User> {
-  //   return this.httpClient.put<User>(`${this.url}/${id.id}`, usuario, this.httpOptions);
-  // }
+  updateUser(usuario: User, id: any): Observable<User> {
+    return this.httpClient.put<User>(`${this.url}/${id.id}`, usuario, this.httpOptions);
+  }
 
-  // deletarUser(id: any){
-  //   return this.httpClient.delete(`${this.url}/${id}`, this.httpOptions)
-  // }
+  deletarUser(id: any){
+    return this.httpClient.delete(`${this.url}/${id}`, this.httpOptions)
+  }
 }
