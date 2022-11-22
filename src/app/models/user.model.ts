@@ -1,6 +1,6 @@
 export interface User{
   id: number;
-  discriminacao: number;
+  discriminacao: string;
   email: string;
   senha: string;
   interquali?: string [];

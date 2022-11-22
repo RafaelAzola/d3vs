@@ -37,7 +37,11 @@ export class CadastroAlunoComponent implements OnInit {
 
     this.criarUsuario.lerUser().subscribe({
       next:(usuario: User[]) => {
-        this.user = usuario
+        try {
+          this.user = usuario
+        } catch (ex) {
+          console.log(ex);
+        }
       }
     })
 
@@ -46,7 +50,6 @@ export class CadastroAlunoComponent implements OnInit {
         this.interquali = usuario
       }
     })
-
   }
 
   cadastrarUsuario(){
@@ -59,7 +62,7 @@ export class CadastroAlunoComponent implements OnInit {
     const nascimento = this.form.controls["nascimento"].value;
     const descricao = this.form.controls["descricao"].value;
 
-    const usuario: User = {id: id, discriminacao: 1, email: email, senha: senha, nome: nome, cpf: cpf, nascimento: nascimento, descricao: descricao}
+    const usuario: User = {id: id, discriminacao: "aluno", email: email, senha: senha, nome: nome, cpf: cpf, nascimento: nascimento, descricao: descricao}
 
     this.criarUsuario.salvarUser(usuario).subscribe({
       next: () => {

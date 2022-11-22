@@ -49,7 +49,7 @@ export class CadastroTutorComponent implements OnInit {
     const nascimento = this.form.controls["nascimento"].value;
     const descricao = this.form.controls["descricao"].value;
 
-    const usuario: User = {id: id, discriminacao: 2, email: email, senha: senha, nome: nome, cpf: cpf, nascimento: nascimento, descricao: descricao}
+    const usuario: User = {id: id, discriminacao: "prof", email: email, senha: senha, nome: nome, cpf: cpf, nascimento: nascimento, descricao: descricao}
 
     this.criarUsuario.salvarUser(usuario).subscribe({
       next: () => {
