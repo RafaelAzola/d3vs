@@ -23,17 +23,19 @@
           <span class="subtitulo">Adicione as linguagens de seu interesse</span>
         </mat-card-subtitle>
         <section class="sectionSelect">
+          <form [formGroup]="form" (submit)="selecionarInteresse()">
           <div class="sectionOptions">
-            <select class="intSelect">
+            <select formControlName="interesse" name="interesse" id="interesse" class="intSelect">
               <option *ngFor="let i of interquali" value="{{i.nome}}">
                 {{i.nome}}
               </option>
             </select>
-            <button id="botaoSelecionar">Selecionar</button>
+            <button type="submit" id="botaoSelecionar">Selecionar</button>
           </div>
+        </form>
           <div class="sectionCards">
-            <div class="interesseCard">
-              <span>Java</span>
+            <div *ngFor="let i of interesse" class="interesseCard">
+              <span>{{i.nome}}</span>
               <img src="../../assets/Imagens/X.svg">
             </div>
           </div>

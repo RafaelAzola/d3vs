@@ -1,4 +1,4 @@
 export interface Interquali{
-  id: number;
+  id?: number;
   nome: string;
 }

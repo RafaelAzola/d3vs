@@ -14,7 +14,7 @@ import { Router } from '@angular/router';
 export class CadastroAlunoComponent implements OnInit {
 
   form!: FormGroup;
-  // user!: User[];
+  interesse: Interquali[] = [];
   interquali!: Interquali[];
 
   constructor(
@@ -29,21 +29,12 @@ export class CadastroAlunoComponent implements OnInit {
     this.form = this.formBuilder.group({
       email: new FormControl(''),
       senha: new FormControl(''),
+      interesse: new FormControl(''),
       nome: new FormControl(''),
       cpf: new FormControl(''),
       nascimento: new FormControl(''),
       descricao: new FormControl('')
     })
-
-    // this.criarUsuario.lerUser().subscribe({
-    //   next:(usuario: User[]) => {
-    //     try {
-    //       this.user = usuario
-    //     } catch (ex) {
-    //       console.log(ex);
-    //     }
-    //   }
-    // })
 
     this.criarInterquali.lerInterquali().subscribe({
       next:(usuario: Interquali[]) => {
@@ -52,9 +43,21 @@ export class CadastroAlunoComponent implements OnInit {
     })
   }
 
+  converterInterQuali2String(interquali: Interquali[]) {
+    let str: string[] = []
+    interquali.forEach(e => str.push(e.nome));
+    return str;
+  }
+
+  selecionarInteresse(){
+
+    const interesse = this.form.controls["interesse"].value;
+    const interesses: Interquali = {nome: interesse}
+    this.interesse.push(interesses)
+  }
+
   cadastrarUsuario(){
 
-    // const id = (this.user[(this.user.length)-1].id) +1;
     const email = this.form.controls["email"].value;
     const senha = this.form.controls["senha"].value;
     const nome = this.form.controls["nome"].value;
@@ -62,7 +65,8 @@ export class CadastroAlunoComponent implements OnInit {
     const nascimento = this.form.controls["nascimento"].value;
     const descricao = this.form.controls["descricao"].value;
 
-    const usuario: User = {discriminacao: "aluno", email: email, senha: senha, nome: nome, cpf: cpf, nascimento: nascimento, descricao: descricao}
+    const usuario: User = {discriminacao: "aluno", email: email, senha: senha,
+    interquali: this.converterInterQuali2String(this.interesse), nome: nome, cpf: cpf, nascimento: nascimento, descricao: descricao}
 
     this.criarUsuario.salvarUser(usuario).subscribe({
       next: () => {
