@@ -62,23 +62,28 @@ span{
   background: #11DD62;
   border: 1px solid #11DD62;
   color: white;
+  cursor: pointer;
 }
-#botaoGoogle{
-  background: #FFFFFF;
-  border: 1px solid #11DD62;
-  color: #11DD62;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-#imgGoogle{
-  width: 25px;
-  height: 25px;
-  margin-right: 10px;
+#botaoLogin:disabled {
+  border: 1px solid gray;
+  background-color: gray;
+  cursor: default;
 }
 #botaoCadastrar{
   background: #FFFFFF;
   border: 1px solid #11DD62;
   color: #11DD62;
   font-size: 18px;
+  cursor: pointer;
+}
+#divCheckTutor{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+#divCheckTutor input{
+  height: 16px;
+  width: 16px;
+  cursor: pointer;
 }

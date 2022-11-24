@@ -114,3 +114,6 @@
   height: 7px;
   margin-right: 5px;
 }
+.clickLink{
+  cursor: pointer;
+}

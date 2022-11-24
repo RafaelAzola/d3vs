@@ -75,6 +75,7 @@ section{
   display: flex;
   align-items: center;
   gap: 15%;
+  cursor: pointer;
 }
 #seta{
   margin-left: 15%;

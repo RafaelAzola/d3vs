@@ -11,7 +11,7 @@ main{
   align-items: center;
 }
 h2{
-  margin: auto;
+  margin: 40px;
   font-family: 'Inter';
   font-weight: 700;
   font-size: 30px;
@@ -25,7 +25,7 @@ h2{
 }
 .soliCards{
   margin: 1%;
-  width: 880px;
+  width: 800px;
   height: 110px;
   background: #FFFFFF;
   border: 1px solid #11DD62;

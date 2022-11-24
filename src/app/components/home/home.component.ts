@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import { User } from 'src/app/models/user.model';
+import { Auth } from 'src/app/models/auth.model';
 import { UserServiceService } from 'src/app/services/user-service/user-service.service';
 
 @Component({
@@ -13,7 +13,6 @@ import { UserServiceService } from 'src/app/services/user-service/user-service.s
 export class HomeComponent implements OnInit {
 
   form!: FormGroup;
-  usuarios!: User[];
 
   constructor(
     private formBuilder: FormBuilder,
@@ -26,24 +25,32 @@ export class HomeComponent implements OnInit {
 
     this.form = this.formBuilder.group({
       email: new FormControl('', [Validators.required]),
-      senha: new FormControl('', [Validators.required])
-    })
-
-    this.lerUsuario.lerUser().subscribe({
-      next:(clientes: User[]) => {
-        this.usuarios = clientes
-      }
+      senha: new FormControl('', [Validators.required]),
+      checktutor: new FormControl('')
     })
   }
 
   realizarLogin(){
-    let cliente = this.validarUsuario()
 
-    if(!cliente){
-      this.alertaDados("falha")
-    } else {
-      this.validarSenha(cliente)
-    }
+    const email = this.form.controls["email"].value;
+    const senha = this.form.controls["senha"].value;
+    const discriminacao = this.form.controls["checktutor"].value;
+
+    const usuario: Auth = {discriminacao: discriminacao ? "prof" : "aluno", email: email, senha: senha}
+
+    this.lerUsuario.authUser(usuario).subscribe({
+      next: (user) => {
+        if(user.discriminacao == "aluno"){
+          this.router.navigate(['../inicio-aluno'])
+        }
+        if(user.discriminacao == "prof"){
+          this.router.navigate(['../inicio-tutor'])
+        }
+      },
+      error: () => {
+        this.alertaDados("falha")
+      }
+    })
   }
 
   alertaDados(tipoExecucao: string){
@@ -51,27 +58,6 @@ export class HomeComponent implements OnInit {
       case "falha":
         this.snackBar.open("Não foi possível realizar o login", undefined, {duration: 2000})
         break;
-    }
-  }
-
-  validarUsuario(): any{
-    for(let cliente of this.usuarios){
-      if(cliente.email === this.form.controls["email"].value)
-      return cliente;
-    }
-    return null;
-  }
-
-  validarSenha(cliente: User){
-    if(cliente.senha === this.form.controls["senha"].value){
-      if(cliente.discriminacao == "aluno"){
-        this.router.navigate(['../inicio-aluno'])
-      }
-      if(cliente.discriminacao == "prof"){
-        this.router.navigate(['../inicio-tutor'])
-      }
-    } else {
-      this.alertaDados("falha")
     }
   }
 }

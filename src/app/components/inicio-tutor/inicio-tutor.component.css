@@ -44,12 +44,15 @@ span{
 }
 #div1{
   background-color: #11DD62;
+  cursor: pointer;
 }
 #div2{
   background: rgba(37, 19, 243, 0.61);
+  cursor: pointer;
 }
 #div3{
   background-color: #1602F8;
+  cursor: pointer;
 }
 #div3 img{
   width: 150px;
