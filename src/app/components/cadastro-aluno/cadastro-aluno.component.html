@@ -10,7 +10,7 @@
         <mat-card-title><h2>Login</h2></mat-card-title>
         <div class="divInput">
           <label for="email">Email</label>
-          <input formControlName="email" type="text" name="email" id="email">
+          <input formControlName="email" type="email" name="email" id="email" placeholder="exemplo@email.com">
         </div>
         <div class="divInput">
           <label for="senha">Senha</label>
@@ -62,7 +62,7 @@
             </div>
             <div class="divInput">
               <label for="nascimento">Data de Nascimento</label>
-              <input formControlName="nascimento" type="text" name="nascimento" id="inputData">
+              <input formControlName="nascimento" type="date" name="nascimento" id="inputData">
             </div>
           </div>
         </section>
@@ -74,7 +74,7 @@
           </div>
         </section>
       </mat-card>
-      <button type="submit" id="botaoCadastrar">
+      <button [disabled]="!form.valid" type="submit" id="botaoCadastrar">
         FINALIZAR CADASTROS
       </button>
     </section>

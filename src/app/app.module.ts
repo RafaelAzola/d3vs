@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatCardModule } from '@angular/material/card';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -18,8 +19,8 @@ import { RetornarComponent } from './components/retornar/retornar.component';
 import { MenuFiltroComponent } from './components/menu-filtro/menu-filtro.component';
 import { HistoricoTutorComponent } from './components/historico-tutor/historico-tutor.component';
 import { HistoricoAlunoComponent } from './components/historico-aluno/historico-aluno.component';
-import { SelecaoComponent } from './components/selecao/selecao.component';
 import { PerfilTutorComponent } from './components/perfil-tutor/perfil-tutor.component';
+import { PerfilTutorAlunoComponent } from './components/perfil-tutor-aluno/perfil-tutor-aluno.component';
 
 @NgModule({
   declarations: [
@@ -35,8 +36,8 @@ import { PerfilTutorComponent } from './components/perfil-tutor/perfil-tutor.com
     MenuFiltroComponent,
     HistoricoTutorComponent,
     HistoricoAlunoComponent,
-    SelecaoComponent,
     PerfilTutorComponent,
+    PerfilTutorAlunoComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,6 +45,7 @@ import { PerfilTutorComponent } from './components/perfil-tutor/perfil-tutor.com
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    MatSnackBarModule,
     MatCardModule
   ],
   providers: [],

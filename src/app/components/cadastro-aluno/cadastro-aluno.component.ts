@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { User } from 'src/app/models/user.model';
 import { UserServiceService } from 'src/app/services/user-service/user-service.service';
 import { Interquali } from 'src/app/models/interquali.model';
@@ -27,12 +27,12 @@ export class CadastroAlunoComponent implements OnInit {
   ngOnInit(): void {
 
     this.form = this.formBuilder.group({
-      email: new FormControl(''),
-      senha: new FormControl(''),
+      email: new FormControl('', [Validators.required]),
+      senha: new FormControl('', [Validators.required]),
       interesse: new FormControl(''),
-      nome: new FormControl(''),
-      cpf: new FormControl(''),
-      nascimento: new FormControl(''),
+      nome: new FormControl('', [Validators.required]),
+      cpf: new FormControl('', [Validators.required]),
+      nascimento: new FormControl('', [Validators.required]),
       descricao: new FormControl('')
     })
 

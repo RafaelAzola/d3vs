@@ -10,7 +10,7 @@
         <mat-card-title><h2>Login</h2></mat-card-title>
         <div class="divInput">
           <label for="email">Email</label>
-          <input formControlName="email" type="text" name="email" id="email">
+          <input formControlName="email" type="email" name="email" id="email" placeholder="exemplo@email.com">
         </div>
         <div class="divInput">
           <label for="senha">Senha</label>
@@ -18,30 +18,24 @@
         </div>
       </mat-card>
       <mat-card class="card2">
-        <mat-card-title><h2>Qualificações</h2></mat-card-title>
+        <mat-card-title><h2>Interesses</h2></mat-card-title>
         <mat-card-subtitle>
-          <span class="subtitulo">Selecione que linguagens deseja ensinar</span>
+          <span class="subtitulo">Adicione as linguagens de seu interesse</span>
         </mat-card-subtitle>
         <section class="sectionSelect">
+          <form [formGroup]="form" (submit)="selecionarInteresse()">
           <div class="sectionOptions">
-            <select class="intSelect">
-              <option>Java</option>
-              <option>Kotlin</option>
-              <option>C#</option>
+            <select formControlName="interesse" name="interesse" id="interesse" class="intSelect">
+              <option *ngFor="let i of interquali" value="{{i.nome}}">
+                {{i.nome}}
+              </option>
             </select>
-            <button id="botaoSelecionar">Selecionar</button>
+            <button type="submit" id="botaoSelecionar">Selecionar</button>
           </div>
+        </form>
           <div class="sectionCards">
-            <div class="interesseCard">
-              <span>Java</span>
-              <img src="../../assets/Imagens/X.svg">
-            </div>
-            <div class="interesseCard">
-              <span>Kotlin</span>
-              <img src="../../assets/Imagens/X.svg">
-            </div>
-            <div class="interesseCard">
-              <span>C#</span>
+            <div *ngFor="let i of interesse" class="interesseCard">
+              <span>{{i.nome}}</span>
               <img src="../../assets/Imagens/X.svg">
             </div>
           </div>
@@ -68,7 +62,7 @@
             </div>
             <div class="divInput">
               <label for="nascimento">Data de Nascimento</label>
-              <input formControlName="nascimento" type="text" name="nascimento" id="inputData">
+              <input formControlName="nascimento" type="date" name="nascimento" id="inputData">
             </div>
           </div>
         </section>
@@ -80,7 +74,7 @@
           </div>
         </section>
       </mat-card>
-      <button type="submit" id="botaoCadastrar">
+      <button [disabled]="!form.valid" type="submit" id="botaoCadastrar">
         FINALIZAR CADASTROS
       </button>
     </section>

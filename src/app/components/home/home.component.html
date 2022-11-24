@@ -2,18 +2,18 @@
   <section>
     <img src="../../assets/Imagens/Logo.svg">
     <h1>D3VS</h1>
-    <form>
+    <form [formGroup]="form" (submit)="realizarLogin()">
       <div>
-        <label>USUÁRIO</label>
-        <input type="text">
+        <label for="email">USUÁRIO</label>
+        <input formControlName="email" type="email" name="email" id="email">
       </div>
       <div>
-        <label>SENHA</label>
-        <input type="text">
+        <label for="senha">SENHA</label>
+        <input formControlName="senha" type="text" name="senha" id="senha">
       </div>
       <div>
-        <button routerLink="../selecao" id="botaoLogin">LOGIN</button>
-        <button id="botaoGoogle">
+        <button [disabled]="!form.valid" type="submit" id="botaoLogin">LOGIN</button>
+        <button id="botaoGoogle" disabled>
           <img id="imgGoogle" src="../../assets/Imagens/Google.png">
           ENTRAR COM O GOOGLE
         </button>
